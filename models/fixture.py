@@ -5,3 +5,11 @@ class Fixture:
         self.away_score = away_score
         self.home_team = home_team
         self.home_score = home_score
+
+    def result(self):
+        if self.away_score == self.home_score:
+            return None
+        elif self.away_score > self.home_score:
+            return self.away_team
+        elif self.away_score < self.home_score:
+            return self.home_team
