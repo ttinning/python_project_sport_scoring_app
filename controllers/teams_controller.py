@@ -1,9 +1,9 @@
 from flask import Blueprint, Flask, redirect, render_template, request
 
 from models.team import Team
-import repositories.teams_repository as team_repository
+import repositories.team_repository as team_repository
 
-teams_repository = Blueprint("teams", __name__)
+teams_blueprint = Blueprint("teams", __name__)
 
 #INDEX
 @teams_blueprint.route("/teams")

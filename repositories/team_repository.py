@@ -2,8 +2,8 @@ from db.run_sql import run_sql
 from models.team import Team
 
 def save(team):
-    sql = "INSERT INTO teams (name) VALUES (%s) RETURNING id"
-    values = [team.name]
+    sql = "INSERT INTO teams (name, location) VALUES (%s, %s) RETURNING id"
+    values = [team.name, team.location]
     results = run_sql(sql, values)
     id = results[0]['id']
     team.id = id

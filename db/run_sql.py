@@ -6,7 +6,7 @@ def run_sql(sql, values = None):
     conn = None
     try:
         conn = psycopg2.connect("dbname='sport_scoring'")
-        cur = conn.cusor(cusor_factory=psycopg2.extras.DictCursor)
+        cur = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
         cur.execute(sql, values)
         conn.commit()
         results = cur.fetchall()
