@@ -14,22 +14,22 @@ class TestFixture(unittest.TestCase):
 
     def test_fixture_1_has_away_team_name(self):
         expected = "Saints"
-        actual = self.fixture_1.away_team
+        actual = self.fixture_1.team_1
         self.assertEqual(expected, actual)
 
     def test_fixture_2_has_home_team_name(self):
         expected = "Rams"
-        actual = self.fixture_1.home_team
+        actual = self.fixture_1.team_2
         self.assertEqual(expected, actual)
 
     def test_fixture_1_has_away_team_score(self):
         expected = 21
-        actual = self.fixture_1.away_score
+        actual = self.fixture_1.team_1_score
         self.assertEqual(expected, actual)
     
     def test_fixture_2_has_home_team_score(self):
         expected = 21
-        actual = self.fixture_2.home_score
+        actual = self.fixture_2.team_2_score
         self.assertEqual(expected, actual)
 
     def test_winner_of_fixture_1__away_team(self):

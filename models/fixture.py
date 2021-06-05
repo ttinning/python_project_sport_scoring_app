@@ -1,16 +1,16 @@
 class Fixture:
 
-    def __init__(self, away_team, away_score, home_team, home_score, id=None):
-        self.away_team = away_team
-        self.away_score = away_score
-        self.home_team = home_team
-        self.home_score = home_score
+    def __init__(self, team_1, team_1_score, team_2, team_2_score, id=None):
+        self.team_1 = team_1
+        self.team_1_score = team_1_score
+        self.team_2 = team_2
+        self.team_2_score = team_2_score
         self.id = id
 
     def result(self):
-        if self.away_score == self.home_score:
+        if self.team_1_score == self.team_2_score:
             return None
-        elif self.away_score > self.home_score:
-            return self.away_team
-        elif self.away_score < self.home_score:
-            return self.home_team
+        elif self.team_1_score > self.team_2_score:
+            return self.team_1
+        elif self.team_1_score < self.team_2_score:
+            return self.team_2
