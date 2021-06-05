@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="new_team">
+    <h2>Create a New Team</h2>
+    <form action="/teams" method="POST">
+    <section>
+        <label for="team_name">Enter Team Name: </label>
+        <input type="text" id="team_name" name="team_name" placeholder="Team Name">
+    </section>
+    <section>
+        <label for="location">Enter Team Location: </label>
+        <input type="text" id="location" name="location" placeholder="Location">
+    </section>
+    <section>
+        <input type="submit">
+    </section>
+    </form>
+</section>
+
+
+{% endblock %}
