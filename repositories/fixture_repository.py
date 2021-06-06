@@ -4,11 +4,11 @@ from models.team import Team
 import repositories.team_repository as team_repository
 
 def save(fixture):
-    sql = "INSERT INTO fixtures (team_1_id, team_2_id) VALUES (%s, %s) RETURNING id"
-    values = [fixture.team_1, fixture.team_2]
-    reuslts = run_sql(sql, values)
-    id = results[0]['id']
-    fixture.id = id
+    sql = "INSERT INTO fixtures (team_1_id, team_1_score, team_2_id, team_2_score) VALUES (%s, %s, %s, %s) RETURNING id"
+    values = [fixture.team_1.id, fixture.team_1_score, fixture.team_2.id, fixture.team_2_score]
+    results = run_sql(sql, values)
+    fixture.id = results[0]['id']
+    return fixture
 
 def select_all():
     fixtures = []
@@ -17,7 +17,7 @@ def select_all():
     for result in results:
         team_1 = team_repository.select(result["team_1_id"])
         team_2 = team_repository.select(result["team_2_id"])
-        fixture = Fixture(team_1, team_2, result["id"])
+        fixture = Fixture(team_1, result["team_1_score"], team_2, result["team_2_score"], result["id"])
         fixtures.append(fixture)
     return fixtures
 
@@ -25,7 +25,7 @@ def select(id):
     sql = "SELECT * FROM fixtures WHERE id = %s"
     values = [id]
     result = run_sql(sql, values)[0]
-    fixture = Fixture(result["team_1_id"], result["team_2_id"], result["id"])
+    fixture = Fixture(result["team_1_id"], result["team_1_score"], result["team_2_id"],result["team_2_score"], result["id"])
     return fixture
 
 def delete_all():
