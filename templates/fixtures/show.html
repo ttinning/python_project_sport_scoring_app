@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 
+<h2>Fixtures</h2>
+
 {% for fixture in fixtures %}
-<section>
+<section class="fixture_list">
     <li>{{fixture.team_1.name}} @ {{fixture.team_2.name}}</li>
     <li>{{fixture.team_1_score}} - {{fixture.team_2_score}}</li>
 </section>

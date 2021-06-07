@@ -14,3 +14,4 @@ CREATE TABLE fixtures (
     team_2 SERIAL REFERENCES teams(id) ON DELETE CASCADE,
     team_2_score INT
 );
+
