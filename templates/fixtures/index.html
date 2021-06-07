@@ -6,7 +6,7 @@
     <section>
     {% for fixture in fixtures %}
         <section>
-            <p>{{ fixture.team_1.name }} {{ fixture.team_1_score }} - {{ fixture.team_2_score }} {{ fixture.team_2.name }} </p>
+            <p>{{ fixture.team_1.name }}{{ fixture.team_1_score }} - {{ fixture.team_2_score }} {{ fixture.team_2.name }} </p>
             <button><a href="fixtures/{{fixture.id}}/edit">Edit Fixture</a></button>
             <form action="/fixtures/{{fixture.id}}/delete" method="POST">
                 <input type="submit" value="Delete" id="delete_button">

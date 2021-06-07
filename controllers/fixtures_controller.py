@@ -21,7 +21,6 @@ def new_fixture():
 
 @fixtures_blueprint.route("/fixtures", methods=["POST"])
 def create_fixture():
-    print(request.form)
     team_1_id = request.form["team_1"]
     team_1_score = request.form["team_1_score"]
     team_2_id = request.form["team_2"]
@@ -33,9 +32,10 @@ def create_fixture():
     return redirect("/fixtures")
 
 @fixtures_blueprint.route("/fixtures/<id>")
-def show_fixture(id):
-    fixture = fixture_repository.select(id)
-    return render_template("/fixtures/index.html")
+def show_fixtures(id):
+    team = team_repository.select(id)
+    fixtures = team_repository.show_fixtures(team)
+    return render_template("/fixtures/show.html", team=team, fixtures=fixtures)
 
 @fixtures_blueprint.route("/fixtures/<id>/edit")
 def edit_team(id):

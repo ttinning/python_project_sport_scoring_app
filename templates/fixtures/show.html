@@ -1,8 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
+
+{% for fixture in fixtures %}
 <section>
-    <h3>{{fixture.team_1.name}} @ {{fixture.team_2.name}}</h3>
-        <p>{{fixture.team_1_score}} - {{fixture.team_2_score}}</p>
+    <li>{{fixture.team_1.name}} @ {{fixture.team_2.name}}</li>
+    <li>{{fixture.team_1_score}} - {{fixture.team_2_score}}</li>
 </section>
+{% endfor %}
 
 {% endblock %}
