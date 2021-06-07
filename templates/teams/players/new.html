@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Add New Player</h2>
+
+<form action="/teams/players" method="POST">
+    <section>
+        <label for="player_name">Name: </label>
+        <input type="text" id="player_name" value="player name">
+    </section>
+    <section>
+        <label for="team_1">Enter Team: </label>
+        <select name="team_1" id="team_1">
+            {% for team in teams %}
+            <option value="{{team.id}}">{{ team.name }}</option>
+            {% endfor %}
+        </select>
+    </section>
+    <section>
+        <label for="position">Position: </label>
+        <input type="text" id="position" value="player position">
+    </section>
+    <section>
+        <label for="jersey_number">Jersey Number: </label>
+        <input type="text" id="jersey_number" value="jersey number">
+    </section>
+    <section>
+        <label for="passing_yards">Passing Yards: </label>
+        <input type="text" id="passing_yards" value="passing yards">
+    </section>
+    <section>
+        <label for="rushing_yards">Rushing Yards: </label>
+        <input type="text" id="rushing_yards" value="rushing yards ">
+    </section>
+    <section>
+        <input type="submit">
+    </section>
+</form>
+
+{% endblock %}

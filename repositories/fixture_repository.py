@@ -4,7 +4,7 @@ from models.team import Team
 import repositories.team_repository as team_repository
 
 def save(fixture):
-    sql = "INSERT INTO fixtures (team_1_id, team_1_score, team_2_id, team_2_score) VALUES (%s, %s, %s, %s) RETURNING id"
+    sql = "INSERT INTO fixtures (team_1, team_1_score, team_2, team_2_score) VALUES (%s, %s, %s, %s) RETURNING id"
     values = [fixture.team_1.id, fixture.team_1_score, fixture.team_2.id, fixture.team_2_score]
     results = run_sql(sql, values)
     fixture.id = results[0]['id']
@@ -15,8 +15,8 @@ def select_all():
     sql = "SELECT * FROM fixtures"
     results = run_sql(sql)
     for result in results:
-        team_1 = team_repository.select(result["team_1_id"])
-        team_2 = team_repository.select(result["team_2_id"])
+        team_1 = team_repository.select(result["team_1"])
+        team_2 = team_repository.select(result["team_2"])
         fixture = Fixture(team_1, result["team_1_score"], team_2, result["team_2_score"], result["id"])
         fixtures.append(fixture)
     return fixtures

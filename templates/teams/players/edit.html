@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Update Player</h2>
+
+<form action="/teams/players/{{player.id}}" method="POST">
+    <section>
+        <label for="player_name">Name: </label>
+        <input type="text" id="player_name" value="{{ player.player_name }}">
+    </section>
+    <section>
+        <label for="team_id">Team: </label>
+        <select name="team_id" id="team_id">
+            {% for team in teams %}
+            <option value="{{player.team_id}}" {% if player.team_id == team.id %} selected {% endif %}>
+                {{ team.name }}
+            </option>
+            {% endfor %}
+    </section>
+    <section>
+        <label for="position">Position: </label>
+        <input type="text" id="position" value="{{ player.position }}">
+    </section>
+    <section>
+        <label for="jersey_number">Jersey Number: </label>
+        <input type="text" id="jersey_number" value="{{ player.jersey_number }}">
+    </section>
+    <section>
+        <label for="passing_yards">Passing Yards: </label>
+        <input type="text" id="passing_yards" value="{{ player.passing_yards }}">
+    </section>
+    <section>
+        <label for="rushing_yards">Rushing Yards: </label>
+        <input type="text" id="rushing_yards" value="{{ player.rushing_yards }}">
+    </section>
+    <section>
+        <input type="submit">
+    </section>
+</form>
+
+{% endblock %}
