@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+<section>
+    <h3>{{fixture.team_1.name}} @ {{fixture.team_2.name}}</h3>
+        <p>{{fixture.team_1_score}} - {{fixture.team_2_score}}</p>
+</section>
+
+{% endblock %}
