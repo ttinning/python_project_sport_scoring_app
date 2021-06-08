@@ -37,7 +37,7 @@ def update_player(id):
     jersey_number = request.form["jersey_number"]
     passing_yards = request.form["passing_yards"]
     rushing_yards = request.form["rushing_yards"]
-    player = Player(player_name, team_id, position, jersey_number, passing_yards, rushing_yards)
+    player = Player(player_name, team_id, position, jersey_number, passing_yards, rushing_yards, id)
     player_repository.update(player)
     return redirect("/teams/players")
 

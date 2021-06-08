@@ -50,7 +50,7 @@ def delete_team(id):
     team_repository.delete(id)
     return redirect("/teams")
 
-@teams_blueprint.route("/fixtures/<id>", methods=["POST"])
+@teams_blueprint.route("/fixtures/<id>", methods=["GET"])
 def show_fixtures(id):
     team = team_repository.select(id)
     fixtures = team_repository.show_fixtures(team)
