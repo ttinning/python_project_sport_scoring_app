@@ -8,7 +8,7 @@
             <label for="team_1">Away Team: </label>
             <select name="team_1" id="team_1">
                 {% for team in teams %}
-                <option value="{{fixture.team_1}}" {% if fixture.team_1 == team.id %} selected {% endif %}>
+                <option value="{{team.id}}" {% if fixture.team_1 == team.id %} selected {% endif %}>
                     {{ team.name }}
                 </option>
                 {% endfor %}
@@ -22,7 +22,7 @@
             <label for="team_2">Home Team: </label>
             <select name="team_2" id="team_2">
                 {% for team in teams %}
-                <option value="{{fixture.team_2}}" {% if fixture.team_2 == team.id %} selected {% endif %}>
+                <option value="{{team.id}}" {% if fixture.team_2 == team.id %} selected {% endif %}>
                     {{ team.name }}
                 </option>
                 {% endfor %}

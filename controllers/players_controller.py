@@ -17,6 +17,20 @@ def new_player():
     teams = team_repository.select_all()
     return render_template("teams/players/new.html", teams=teams)
 
+@players_blueprint.route("/teams/players", methods=["POST"])
+def create_player():
+    player_name = request.form["player_name"]
+    team_id = request.form["team_id"]
+    position = request.form["position"]
+    jersey_number = request.form["jersey_number"]
+    passing_yards = request.form["passing_yards"]
+    rushing_yards = request.form["rushing_yards"]
+    team = team_repository.select(team_id)
+    print(team_id)
+    new_player = Player(player_name, team, position, jersey_number, passing_yards, rushing_yards)
+    player_repository.save(new_player)
+    return redirect("/teams/players")
+
 @players_blueprint.route("/teams/players/<id>")
 def show_player(id):
     player = player_repository.select(id)

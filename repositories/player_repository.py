@@ -5,7 +5,7 @@ import repositories.team_repository as team_repository
 
 def save(player):
     sql = "INSERT INTO players (player_name, team_id, position, jersey_number, passing_yards, rushing_yards) VALUES (%s, %s, %s, %s, %s, %s) RETURNING id"
-    values = [player.player_name, player.team_id.id, player.position, player.jersey_number, player.passing_yards, player. rushing_yards]
+    values = [player.player_name, player.team_id.id, player.position, player.jersey_number, player.passing_yards, player.rushing_yards]
     results = run_sql(sql, values)
     player.id = results[0]["id"]
     return player
@@ -29,7 +29,7 @@ def select(id):
 
 def update(player):
     sql = "UPDATE players SET (player_name, team_id, position, jersey_number, passing_yards, rushing_yards) = (%s, %s, %s, %s, %s, %s) WHERE id = %s"
-    values = [player.player_name, player.team_id, player.position, player.jersey_number, player.passing_yards, player.rushing_yards]
+    values = [player.player_name, player.team_id.id, player.position, player.jersey_number, player.passing_yards, player.rushing_yards, player.id]
     run_sql(sql, values)
 
 def delete(id):
