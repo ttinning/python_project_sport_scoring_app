@@ -42,13 +42,13 @@ def update(team):
 def show_fixtures(team):
     fixtures = []
 
-    sql = "SELECT * FROM fixtures WHERE team_1_id = %s or team_2_id = %s"
+    sql = "SELECT * FROM fixtures WHERE team_1 = %s or team_2 = %s"
     values = [team.id, team.id]
     results = run_sql(sql, values)
 
     for row in results:
-        team_1 = select(row["team_1_id"])
-        team_2 = select(row["team_2_id"])
+        team_1 = select(row["team_1"])
+        team_2 = select(row["team_2"])
         fixture = Fixture(team_1, row["team_1_score"], team_2, row["team_2_score"], row["id"])
         fixtures.append(fixture)
 

@@ -10,7 +10,7 @@ CREATE TABLE teams (
 CREATE TABLE players (
     id SERIAL PRIMARY KEY,
     player_name VARCHAR(255),
-    team_id SERIAL REFERENCES teams(id) ON DELETE CASCADE,
+    team_id INT REFERENCES teams(id) ON DELETE CASCADE,
     position VARCHAR(255),
     jersey_number INT,
     passing_yards INT,
@@ -19,9 +19,9 @@ CREATE TABLE players (
 
 CREATE TABLE fixtures (
     id SERIAL PRIMARY KEY,
-    team_1 SERIAL REFERENCES teams(id) ON DELETE CASCADE,
+    team_1 INT REFERENCES teams(id) ON DELETE CASCADE,
     team_1_score INT,
-    team_2 SERIAL REFERENCES teams(id) ON DELETE CASCADE,
+    team_2 INT REFERENCES teams(id) ON DELETE CASCADE,
     team_2_score INT
 );
 

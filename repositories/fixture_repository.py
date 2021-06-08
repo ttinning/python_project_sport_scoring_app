@@ -25,7 +25,7 @@ def select(id):
     sql = "SELECT * FROM fixtures WHERE id = %s"
     values = [id]
     result = run_sql(sql, values)[0]
-    fixture = Fixture(result["team_1_id"], result["team_1_score"], result["team_2_id"],result["team_2_score"], result["id"])
+    fixture = Fixture(result["team_1"], result["team_1_score"], result["team_2"],result["team_2_score"], result["id"])
     return fixture
 
 def delete_all():
@@ -39,7 +39,7 @@ def delete(id):
 
 def update(fixture):
     sql = "UPDATE fixtures SET (team_1, team_1_score, team_2, team_2_score = (%s, %s, %s, %s) WHERE id = %s"
-    values = [fixture.team_1, fixture.team_1_score, fixture.team_2, fixture.team_2_score]
+    values = [fixture.team_1, fixture.team_1_score, fixture.team_2, fixture.team_2_score, fixture.id]
     run_sql(sql, values)
 
     

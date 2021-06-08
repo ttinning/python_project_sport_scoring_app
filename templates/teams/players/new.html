@@ -8,8 +8,8 @@
         <input type="text" id="player_name" value="player name">
     </section>
     <section>
-        <label for="team_1">Enter Team: </label>
-        <select name="team_1" id="team_1">
+        <label for="team_id">Enter Team: </label>
+        <select name="team_id" id="team_id">
             {% for team in teams %}
             <option value="{{team.id}}">{{ team.name }}</option>
             {% endfor %}

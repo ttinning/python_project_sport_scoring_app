@@ -44,11 +44,13 @@ def edit_team(id):
     return render_template("fixtures/edit.html", fixture=fixture, teams=teams)
 
 @fixtures_blueprint.route("/fixtures/<id>", methods=["POST"])
-def update_team(id):
-    team_1 = request.form["team_1"]
+def update(id):
+    team_1_id = request.form["team_1"]
     team_1_score = request.form["team_1_score"]
-    team_2 = request.form["team_2"]
+    team_2_id = request.form["team_2"]
     team_2_score = request.form["team_2_score"]
+    team_1 = team_repository.select(int(team_1_id))
+    team_2 = team_repository.select(int(team_2_id))
     fixture = Fixture(team_1, team_1_score, team_2, team_2_score, id)
     fixture_repository.update(fixture)
     return redirect("/fixtures")

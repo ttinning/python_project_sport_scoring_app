@@ -5,7 +5,7 @@
 <form action="/teams/players/{{player.id}}" method="POST">
     <section>
         <label for="player_name">Name: </label>
-        <input type="text" id="player_name" value="{{ player.player_name }}">
+        <input type="text" name="player_name" id="player_name" value="{{ player.player_name }}">
     </section>
     <section>
         <label for="team_id">Team: </label>
@@ -18,19 +18,19 @@
     </section>
     <section>
         <label for="position">Position: </label>
-        <input type="text" id="position" value="{{ player.position }}">
+        <input type="text" name="position" id="position" value="{{ player.position }}">
     </section>
     <section>
         <label for="jersey_number">Jersey Number: </label>
-        <input type="text" id="jersey_number" value="{{ player.jersey_number }}">
+        <input type="text" name="jersey_number" id="jersey_number" value="{{ player.jersey_number }}">
     </section>
     <section>
         <label for="passing_yards">Passing Yards: </label>
-        <input type="text" id="passing_yards" value="{{ player.passing_yards }}">
+        <input type="text" name="passing_yards" id="passing_yards" value="{{ player.passing_yards }}">
     </section>
     <section>
         <label for="rushing_yards">Rushing Yards: </label>
-        <input type="text" id="rushing_yards" value="{{ player.rushing_yards }}">
+        <input type="text" name="rushing_yards" id="rushing_yards" value="{{ player.rushing_yards }}">
     </section>
     <section>
         <input type="submit">

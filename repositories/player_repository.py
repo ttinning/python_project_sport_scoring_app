@@ -3,12 +3,11 @@ from models.player import Player
 
 def save(player):
     sql = "INSERT INTO players (player_name, team_id, position, jersey_number, passing_yards, rushing_yards) VALUES (%s, %s, %s, %s, %s, %s) RETURNING id"
-    values = [player.player_name, player.team_id.id, player.position, player.jersey_number, player.passing_yards, player. rushing_yards]
+    values = [player.player_name, player.team_id, player.position, player.jersey_number, player.passing_yards, player. rushing_yards]
     results = run_sql(sql, values)
     print(results)
     id = results[0]["id"]
     player.id = id
-    return player
 
 def select_all():
     players = []
@@ -23,12 +22,12 @@ def select(id):
     sql = "SELECT * FROM players WHERE id = %s"
     values = [id]
     result = run_sql(sql, values)[0]
-    player = PlayerPlayer(result["player_name"], result["team_id"], result["position"], result["jersey_number"], result["passing_yards"], result["rushing_yards", result["id"]])
+    player = Player(result["player_name"], result["team_id"], result["position"], result["jersey_number"], result["passing_yards"], result["rushing_yards"], result["id"])
     return player
 
 def update(player):
     sql = "UPDATE players SET (player_name, team_id, position, jersey_number, passing_yards, rushing_yards) = (%s, %s, %s, %s, %s, %s) WHERE id = %s"
-    values = [player.player_name, player.team_id.id, player.position, player.jersey_number, player.passing_yards, player. rushing_yards]
+    values = [player.player_name, player.team.id, player.position, player.jersey_number, player.passing_yards, player.rushing_yards]
     run_sql(sql, values)
 
 def delete(id):
