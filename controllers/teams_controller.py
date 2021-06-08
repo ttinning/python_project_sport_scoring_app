@@ -55,3 +55,9 @@ def show_fixtures(id):
     team = team_repository.select(id)
     fixtures = team_repository.show_fixtures(team)
     return render_template("fixtures/show.html", team=team, fixtures=fixtures)
+
+@teams_blueprint.route("/teams/players/<id>", methods=["GET"])
+def show_players(id):
+    team = team_repository.select(id)
+    players = team_repository.show_players(team)
+    return render_template("/teams/players/show.html", team=team, players=players)
