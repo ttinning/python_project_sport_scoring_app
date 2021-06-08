@@ -9,6 +9,7 @@
     text-decoration: underline;
 }
 
+
 header {
     background-color:rgb(19, 19, 65);
     display: flex;
@@ -20,10 +21,10 @@ header > nav > a {
     color: whitesmoke;
     align-self: center;
     text-decoration: none;
-    border: 10px, solid, whitesmoke;
-    border-style: solid;
+    /* border: 10px, solid, whitesmoke;
+    border-style: solid; */
     padding: 10px;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     transition-duration: 0.2s;
     margin-top: 45px;
     margin-right: 25px;
@@ -44,8 +45,7 @@ body {
 
 .league_teams {
     display: flex;
-    flex-direction: row;
-    background-color: white 
+    /* background-color: white  */
 }
 
 #team_name {
@@ -53,9 +53,9 @@ body {
     font-family: 'Russo One', sans-serif;
     font-size: 20px;
     text-decoration: none;
-    margin-top: 25px;
     margin-right: 35px;
-    padding-top: 25px;
+    padding-left: 120px;
+    display: flex
 }
 
 .headings {
@@ -64,6 +64,7 @@ body {
     font-size: 35px;
     font-weight: bold;
     padding-left: 45px;     
+    padding-top: 10px;
 }
 
 .background_image {
@@ -74,6 +75,7 @@ body {
     position: fixed;
     left: 0;
     opacity: 0.20;
+    z-index: 1;
 }
 
 .background_home {
@@ -83,4 +85,46 @@ body {
     height: 60%;
     position: fixed;
     left: 0;
+}
+
+.addbutton {
+    font-family: 'Russo One', sans-serif;
+    color: whitesmoke;
+    align-self: center;
+    text-decoration: none;
+    border: 10px, solid, whitesmoke;
+    border-style: solid;
+    padding: 10px;
+    border-radius: 10px;
+    transition-duration: 0.2s;
+    margin-left: 150px;
+}
+
+#content-wrapper {
+    position: fixed;
+    background: none;
+    z-index: 10;
+}
+
+.button {
+    font-family: 'Russo One', sans-serif;
+    color: rgb(19, 19, 65);
+    align-self: center;
+    text-decoration: none;
+    border: 10px, solid, whitesmoke;
+    border-style: solid;
+    padding: 10px;
+    border-radius: 10px;
+    transition-duration: 0.2s;
+    background-color: whitesmoke;
+    padding-left: 10px;
+}
+
+.new_team {
+    font-family: 'Russo One', sans-serif;
+}
+
+#text_box {
+    font-family: 'Russo One', sans-serif;
+    align-self: center;
 }
