@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
 <section>
-    <h2>NFL Teams</h2>
+    <h2 class="headings">NFL Teams</h2>
     <button><a href="/teams/new">Add A Team</a></button>
     <section>
     {% for team in teams %}
-        <section>
-            <p><a href="fixtures/{{team.id}}">{{team.location}} {{ team.name }}</a></p>
+        <section class="league_teams">
+            <h3 id="team_name"><a href="fixtures/{{team.id}}">{{team.location}} {{ team.name }}</a></h3>
             <button><a href="teams/players/{{team.id}}">View Players</a></button>
             <button><a href="teams/{{team.id}}/edit">Edit Club</a></button>
             <form action="/teams/{{ team.id }}/delete" method="POST">

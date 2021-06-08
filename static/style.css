@@ -1,9 +1,86 @@
 .logo {
     font-family: 'Russo One', sans-serif;
-    font-size: 64px;
+    font-size: 60px;
     color: whitesmoke;
+    margin-left: 45px;
+    margin-right: auto;
+    margin-top: 45px;
+    margin-bottom: 45px;
+    text-decoration: underline;
 }
 
 header {
-    background-color:darkslategrey;
+    background-color:rgb(19, 19, 65);
+    display: flex;
+    justify-content: space-between;
+}
+
+header > nav > a {
+    font-family: 'Russo One', sans-serif;
+    color: whitesmoke;
+    align-self: center;
+    text-decoration: none;
+    border: 10px, solid, whitesmoke;
+    border-style: solid;
+    padding: 10px;
+    border-radius: 10px;
+    transition-duration: 0.2s;
+    margin-top: 45px;
+    margin-right: 25px;
+}
+
+a:hover {
+    color: orangered;
+}
+
+header > nav {
+    align-self: center;
+}
+
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
+}
+
+.league_teams {
+    display: flex;
+    flex-direction: row;
+    background-color: white 
+}
+
+#team_name {
+    color: darkslategrey;
+    font-family: 'Russo One', sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+    margin-top: 25px;
+    margin-right: 35px;
+    padding-top: 25px;
+}
+
+.headings {
+    font-family: 'Russo One',sans-serif;
+    color: rgb(19, 19, 65);
+    font-size: 35px;
+    font-weight: bold;
+    padding-left: 45px;     
+}
+
+.background_image {
+    min-height: 80%;
+    min-width: 1025px;
+    width: 100%;
+    height: 60%;
+    position: fixed;
+    left: 0;
+    opacity: 0.20;
+}
+
+.background_home {
+    min-height: 80%;
+    min-width: 1025px;
+    width: 100%;
+    height: 60%;
+    position: fixed;
+    left: 0;
 }
