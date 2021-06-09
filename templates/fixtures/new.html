@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
-<section class="new_fixture">
+<section class="new">
     <h2>Create a New Fixture</h2>
     <form action="/fixtures" method="POST">
     <section>
         <label for="team_1">Enter Away Team Name: </label>
-        <select name="team_1" id="team_1">
+        <select name="team_1" id="text_box">
             {% for team in teams %}
             <option value="{{team.id}}">{{ team.name }}</option>
             {% endfor %}
@@ -13,11 +13,11 @@
     </section>
     <section>
         <label for="team_1_score">Enter Away Team Score: </label>
-        <input type="text" id="team_1_score" name="team_1_score" placeholder="Score">
+        <input type="text" id="text_box" name="team_1_score" placeholder="Score">
     </section>
     <section>
         <label for="team_2">Enter Home Team Name: </label>
-        <select name="team_2" id="team_2">
+        <select name="team_2" id="text_box">
             {% for team in teams %}
             <option value="{{team.id}}">{{ team.name }}</option>
             {% endfor %}
@@ -25,10 +25,10 @@
     </section>
     <section>
         <label for="team_2_score">Enter Home Team Score: </label>
-        <input type="text" id="team_2_score" name="team_2_score" placeholder="Score">
+        <input type="text" id="text_box" name="team_2_score" placeholder="Score">
     </section>
     <section>
-        <input type="submit">
+        <input type="submit" class="button">
     </section>
     </form>
 </section>

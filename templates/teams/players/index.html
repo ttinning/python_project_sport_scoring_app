@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 
-<section>
-    <h2>Player Information</h2>
+<section class="heading_area">
+    <h4>Player Information</h4>
 
-    <button><a href="/teams/players/new">Add a Player</a></button>
+    <button class="button"><a href="/teams/players/new">Add a Player</a></button>
 
 </section>
 <section class="player_index">
@@ -17,10 +17,10 @@
         <p>Total Passing Yards: {{ player.passing_yards }}</p>
         <p>Total Rushing Yards: {{ player.rushing_yards }}</p>
 
-        <button><a href="/teams/players/{{ player.id }}/edit">Edit Player</a></button>
+        <button class="button"><a href="/teams/players/{{ player.id }}/edit">Edit Player</a></button>
 
         <form action="/teams/players/{{ player.id }}/delete" method="POST">
-            <input type="submit" value="Delete">
+            <button class="button"><a href="teams/{{player.id}}/delete">Delete</a></button>
         </form>
     </div>
     {% endfor %}

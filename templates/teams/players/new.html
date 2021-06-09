@@ -2,14 +2,14 @@
 {% block content %}
 <h2>Add New Player</h2>
 
-<form action="/teams/players" method="POST">
+<form class="new" action="/teams/players" method="POST">
     <section>
         <label for="player_name">Name: </label>
-        <input type="text" name="player_name" id="player_name" value="player name">
+        <input type="text" name="player_name" id="text_box" value="player name">
     </section>
     <section>
         <label for="team_id">Enter Team: </label>
-        <select name="team_id" id="team_id">
+        <select name="team_id" id="text_box">
             {% for team in teams %}
             <option value="{{team.id}}">{{ team.name }}</option>
             {% endfor %}
@@ -17,22 +17,22 @@
     </section>
     <section>
         <label for="position">Position: </label>
-        <input type="text" name="position" id="position" value="player position">
+        <input type="text" name="position" id="text_box" value="player position">
     </section>
     <section>
         <label for="jersey_number">Jersey Number: </label>
-        <input type="text" name="jersey_number" id="jersey_number" value="jersey number">
+        <input type="text" name="jersey_number" id="text_box" value="jersey number">
     </section>
     <section>
         <label for="passing_yards">Passing Yards: </label>
-        <input type="text" name="passing_yards" id="passing_yards" value="passing yards">
+        <input type="text" name="passing_yards" id="text_box" value="passing yards">
     </section>
     <section>
         <label for="rushing_yards">Rushing Yards: </label>
-        <input type="text" name="rushing_yards" id="rushing_yards" value="rushing yards ">
+        <input type="text" name="rushing_yards" id="text_box" value="rushing yards ">
     </section>
     <section>
-        <input type="submit">
+        <input type="submit" class="button">
     </section>
 </form>
 
