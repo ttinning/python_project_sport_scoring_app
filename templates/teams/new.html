@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
-<section class="new_team">
+<section>
     <h2>Create a New Team</h2>
-    <form action="/teams" method="POST">
+    <form action="/teams" method="POST" class="new_team">
     <section>
         <label for="team_name">Enter Team Name: </label>
         <input type="text" id="text_box" name="team_name" placeholder="Team Name">
@@ -12,7 +12,7 @@
         <input type="text" id="text_box" name="location" placeholder="Location">
     </section>
     <section>
-        <input type="submit">
+        <input type="submit" class="button">
     </section>
     </form>
 </section>

@@ -1,17 +1,24 @@
 {% extends "base.html" %}
 {% block content %}
 <section>
-    <h2 class="headings">NFL Teams</h2>
-    <button class="addbutton"><a href="/teams/new">Add A Team</a></button>
+    <section class="heading_area">
+        <h2>NFL Teams</h2>
+        <br>
+        <button class="button"><a href="/teams/new">Add Team</a></button>
+    </section>
     <section>
     {% for team in teams %}
-        <section class="league_teams">
-            <h3 id="team_name"><a href="fixtures/{{team.id}}">{{team.location}} {{ team.name }}</a></h3>
-            <button class="button"><a href="teams/players/{{team.id}}">View Players</a></button>
-            <button class="button"><a href="teams/{{team.id}}/edit">Edit Club</a></button>
-            <form action="/teams/{{ team.id }}/delete" method="POST">
-                <input type="submit" class="button" value="Delete" id="delete_button">
-            </form>
+        <section class="information_display">
+            <ul>
+                <p id="team_name"><a href="fixtures/{{team.id}}">{{team.location}} {{ team.name }}</a></p>
+            </ul>
+            <div class="button_group">
+                <form class="delete_button" action="/teams/{{ team.id }}/delete" method="POST">
+                    <button class="button"><a href="teams/{{team.id}}/delete">Delete</a></button>
+                </form>
+                    <button class="button"><a href="teams/players/{{team.id}}">Players</a></button>
+                    <button class="button"><a href="teams/{{team.id}}/edit">Edit</a></button>
+            </div>
         </section>
     </section>
 {% endfor %}

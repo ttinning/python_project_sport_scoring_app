@@ -2,16 +2,20 @@
 {% block content %}
 
 <h2>Club Players</h2>
+<button class="button"><a href="/teams/players/new">Add Player</a></button>
+
+<section class="player_index">
 
 {% for player in players %}
-    <section>
-        <p>Player Name: {{ player.player_name }}</p>
+        <div>
+            <p>Player Name: {{ player.player_name }}</p>
             <p>Player Team: {{ player.team_id.name }}</p>
             <p>Position: {{ player.position }}</p>
             <p>Jersey Number: {{ player.jersey_number }}</p>
             <p>Total Passing Yards: {{ player.passing_yards }}</p>
             <p>Total Rushing Yards: {{ player.rushing_yards }}</p>
-    </section>
+        </div>  
 {% endfor %}
+</section>
 
 {% endblock %}

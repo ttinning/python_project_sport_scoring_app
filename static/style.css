@@ -1,32 +1,26 @@
 .logo {
-    font-family: 'Russo One', sans-serif;
     font-size: 60px;
     color: whitesmoke;
-    margin-left: 45px;
+    margin-left: 35px;
     margin-right: auto;
-    margin-top: 45px;
-    margin-bottom: 45px;
+    margin-top: 25px;
+    margin-bottom: 35px;
     text-decoration: underline;
 }
 
-
 header {
+    font-family: 'Russo One', sans-serif;
     background-color:rgb(19, 19, 65);
     display: flex;
     justify-content: space-between;
 }
 
 header > nav > a {
-    font-family: 'Russo One', sans-serif;
     color: whitesmoke;
     align-self: center;
     text-decoration: none;
-    /* border: 10px, solid, whitesmoke;
-    border-style: solid; */
     padding: 10px;
-    /* border-radius: 10px; */
     transition-duration: 0.2s;
-    margin-top: 45px;
     margin-right: 25px;
 }
 
@@ -39,13 +33,25 @@ header > nav {
 }
 
 body {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Russo One', sans-serif;
     margin: 0;
 }
 
-.league_teams {
+.information_display {
     display: flex;
+    color: rgb(19, 19, 65);
+    text-decoration: none;
+    padding-left: 80px;
     /* background-color: white  */
+}
+
+ul {
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+li {
+    list-style-type: none;
 }
 
 #team_name {
@@ -54,24 +60,25 @@ body {
     font-size: 20px;
     text-decoration: none;
     margin-right: 35px;
-    padding-left: 120px;
-    display: flex
+    padding-left: 50px;
+    align-content: center;
 }
 
-.headings {
-    font-family: 'Russo One',sans-serif;
+.heading_area {
     color: rgb(19, 19, 65);
     font-size: 35px;
     font-weight: bold;
     padding-left: 45px;     
     padding-top: 10px;
+    display: flex;
+    justify-content: space-around;
 }
 
 .background_image {
-    min-height: 80%;
+    min-height: 84%;
     min-width: 1025px;
     width: 100%;
-    height: 60%;
+    height: 80%;
     position: fixed;
     left: 0;
     opacity: 0.20;
@@ -79,31 +86,19 @@ body {
 }
 
 .background_home {
-    min-height: 80%;
+    min-height: 84%;
     min-width: 1025px;
     width: 100%;
-    height: 60%;
+    height: 80%;
     position: fixed;
     left: 0;
-}
-
-.addbutton {
-    font-family: 'Russo One', sans-serif;
-    color: whitesmoke;
-    align-self: center;
-    text-decoration: none;
-    border: 10px, solid, whitesmoke;
-    border-style: solid;
-    padding: 10px;
-    border-radius: 10px;
-    transition-duration: 0.2s;
-    margin-left: 150px;
 }
 
 #content-wrapper {
     position: fixed;
     background: none;
     z-index: 10;
+
 }
 
 .button {
@@ -115,16 +110,58 @@ body {
     border-style: solid;
     padding: 10px;
     border-radius: 10px;
-    transition-duration: 0.2s;
     background-color: whitesmoke;
     padding-left: 10px;
+    margin-right: 15px;
 }
 
-.new_team {
+.button_group {
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+    padding-left: 15px;
+}
+
+.delete_button {
     font-family: 'Russo One', sans-serif;
+    color: rgb(19, 19, 65);
+    align-self: center
+}
+
+a {
+    color:rgb(19, 19, 65);
 }
 
 #text_box {
     font-family: 'Russo One', sans-serif;
-    align-self: center;
+    padding-top: 10px;
+}
+
+.new_team {
+    text-align: center;
+    padding-left: 550px;
+    padding-top: 70px;
+}
+
+h2 {
+    padding-left: 45px;
+}
+
+.player_index {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.player_index div {
+    flex: 1 0 35%;
+    padding-right: 30px;
+    padding-left:30px;
+    white-space: nowrap;
+    
+}
+
+.information_display > p {
+    font-size: 25px;
+    padding-left: 25px;
 }
