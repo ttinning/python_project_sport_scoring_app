@@ -72,7 +72,7 @@ li {
     padding-left: 45px;     
     padding-top: 10px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .background_image {
