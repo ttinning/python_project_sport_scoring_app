@@ -10,9 +10,11 @@
     {% for team in teams %}
         <section class="information_display">
             <ul>
-                <p id="team_name"><a href="fixtures/{{team.id}}">{{team.location}} {{ team.name }}</a></p>
+                <h3>{{team.location}} {{team.name}}</h3>
+                <!-- <p id="team_name"><a href="fixtures/{{team.id}}">{{team.location}} {{ team.name }}</a></p> -->
             </ul>
             <div class="button_group">
+                <button class="button"><a href="fixtures/{{team.id}}"><i class="fa fa-calendar"></i></a></button>
                 <button class="button"><a href="teams/players/{{team.id}}"><i class="fa fa-group"></i></a></button>
                     <button class="button"><a href="teams/{{team.id}}/edit"><i class="fa fa-pencil"></i></a></button>
                 <form class="delete_button" action="/teams/{{ team.id }}/delete" method="POST">
