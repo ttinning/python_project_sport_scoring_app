@@ -3,11 +3,17 @@
 
 <h2>Fixtures</h2>
 
+<button class="button"><a href="/teams">Back</a></button>
+
 {% for fixture in fixtures %}
 <section class="fixture_list">
     <li>{{fixture.team_1.name}} @ {{fixture.team_2.name}}</li>
     <li>{{fixture.team_1_score}} - {{fixture.team_2_score}}</li>
 </section>
+
+
+
+
 {% endfor %}
 
 {% endblock %}
