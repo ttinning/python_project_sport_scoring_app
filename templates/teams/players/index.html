@@ -17,10 +17,10 @@
         <p>Total Passing Yards: {{ player.passing_yards }}</p>
         <p>Total Rushing Yards: {{ player.rushing_yards }}</p>
 
-        <button class="button"><a href="/teams/players/{{ player.id }}/edit">Edit Player</a></button>
+        <button class="button"><a href="/teams/players/{{ player.id }}/edit"><i class="fa fa-pencil"></i></a></button>
 
         <form action="/teams/players/{{ player.id }}/delete" method="POST">
-            <button class="button"><a href="teams/{{player.id}}/delete">Delete</a></button>
+            <button class="button"><a href="teams/{{player.id}}/delete"><i class="fa fa-trash"></i></a></button>
         </form>
     </div>
     {% endfor %}

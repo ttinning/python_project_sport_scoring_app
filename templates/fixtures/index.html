@@ -11,9 +11,9 @@
         <section class="information_display">
             <p> {{ fixture.team_1.name }} {{ fixture.team_1_score }} - {{ fixture.team_2_score }} {{ fixture.team_2.name }} </p>
             <div class="button_group">
-                <button class="button"><a href="fixtures/{{fixture.id}}/edit">Edit Fixture</a></button>
+                <button class="button"><a href="fixtures/{{fixture.id}}/edit"><i class="fa fa-pencil"></i></a></button>
                 <form action="/fixtures/{{fixture.id}}/delete" method="POST">
-                    <button class="button"><a href="teams/{{fixture.id}}/delete">Delete</a></button>
+                    <button class="button"><a href="teams/{{fixture.id}}/delete"><i class="fa fa-trash"></i></a></button>
             </form>
             </div>
         </section>    
