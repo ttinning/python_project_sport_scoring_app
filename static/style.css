@@ -167,3 +167,8 @@ h2 {
     font-size: 25px;
     padding-left: 25px;
 }
+
+.fixture_list {
+    padding-top: 25px;
+    padding-left: 35px;
+}
