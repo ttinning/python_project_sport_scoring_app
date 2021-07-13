@@ -13,6 +13,8 @@ header {
     background-color:rgb(19, 19, 65);
     display: flex;
     justify-content: space-between;
+    width: 100%;
+    position: fixed;
 }
 
 header > nav > a {
@@ -39,12 +41,14 @@ body {
     background-size: cover;
     width: 100%;
     height: auto;
+    z-index: 1;
+    background-attachment: fixed;
     font-family: 'Russo One', sans-serif;
     margin: 0;
 }
 
 .information_display {
-    display: flex;
+    display: grid;
     color: rgb(19, 19, 65);
     text-decoration: none;
     padding-left: 80px;
@@ -150,7 +154,6 @@ a {
 
 .new {
     text-align: center;
-    padding-left: 550px;
     padding-top: 70px;
 }
 
@@ -181,3 +184,8 @@ h2 {
     padding-top: 25px;
     padding-left: 35px;
 }
+
+/* #new-team {
+    display: flex;
+    justify-content: center;
+} */
