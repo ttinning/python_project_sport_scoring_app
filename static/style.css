@@ -87,7 +87,15 @@ li {
     justify-content: space-between;
 }
 
-
+.homepage {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    background-attachment: fixed;
+    background-position: 50%;
+}
 
 
 /* .background_image {
