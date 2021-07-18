@@ -51,6 +51,8 @@ body {
 
 .information_display {
     display: grid;
+    grid-template-rows: 2rem 1fr 2rem;
+    grid-template-columns: 1fr 33.33%;
     color: rgb(19, 19, 65);
     text-decoration: none;
     padding-left: 80px;
@@ -83,8 +85,6 @@ li {
     font-weight: bold;
     padding-left: 45px;     
     padding-top: 10px;
-    display: flex;
-    justify-content: space-between;
 }
 
 .homepage {
@@ -141,6 +141,7 @@ li {
 
 .button_group {
     display: flex;
+    justify-content: center;
     align-items: center;
     padding-right: 10px;
     padding-left: 15px;
